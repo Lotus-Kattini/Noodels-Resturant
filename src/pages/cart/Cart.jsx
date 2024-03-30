@@ -84,12 +84,12 @@ function Cart() {
               <hr />
             <div className="cart-totals-details">
               <p>Delivery Fees</p>
-              <p>${deliveryFees}</p>
+              <p>${getTotalCartAmount()===0?0: deliveryFees}</p>
             </div>
               <hr />
             <div className="cart-totals-details">
               <b>Total</b>
-              <b>${getTotalCartAmount()+deliveryFees}</b>
+              <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+deliveryFees}</b>
             </div>
           </div>
             <button onClick={checkOut}>PROCEED TO CHECKOUT</button>
