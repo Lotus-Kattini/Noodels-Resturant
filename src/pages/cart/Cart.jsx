@@ -88,7 +88,7 @@ function Cart() {
             </div>
               <hr />
             <div className="cart-totals-details">
-              <b>Totla</b>
+              <b>Total</b>
               <b>${getTotalCartAmount()+deliveryFees}</b>
             </div>
           </div>
