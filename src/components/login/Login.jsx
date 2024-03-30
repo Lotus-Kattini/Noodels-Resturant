@@ -16,7 +16,7 @@ function Login({setshowLogin}) {
         const logpass=window.localStorage.getItem('password');
         
         if(logemail && logpass ===password){
-            window.localStorage.setItem('logout',true)
+            window.localStorage.setItem('forlogout',password)
             toast.success('You loged in successfully', {
                 position: "top-right",
                 autoClose: 5000,
@@ -27,6 +27,22 @@ function Login({setshowLogin}) {
                 progress: undefined,
                 theme: "light",
             });
+            setTimeout(()=>{
+                window.location.reload()
+            },3000)
+        }
+        else{
+            toast.error('Check email or password!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            
         }
     }
 
@@ -46,7 +62,7 @@ function Login({setshowLogin}) {
         else{
             window.localStorage.setItem('email',email)
             window.localStorage.setItem('password',password)
-            window.localStorage.setItem('logout',true)
+            window.localStorage.setItem('forlogout',passwordR)
             toast.success('You loged in successfully', {
                 position: "top-right",
                 autoClose: 5000,
@@ -57,6 +73,9 @@ function Login({setshowLogin}) {
                 progress: undefined,
                 theme: "light",
             });
+            setTimeout(()=>{
+                window.location.reload()
+            },3000)
         }
     }
 

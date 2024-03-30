@@ -10,13 +10,13 @@ function Cart() {
 
   const {cartItems,addToCart,removeFromCart,food_list,removeallFromCart,getTotalCartAmount} = useContext(Context);
   const deliveryFees=5;
-  const logoutlocal=window.localStorage.getItem('logout')
+  const logoutlocal=window.localStorage.getItem('forlogout')
   const nav=useNavigate()
   console.log(logoutlocal)
 
 
   function checkOut(){
-    if(logoutlocal===true){
+    if(logoutlocal){
       nav('/order')
     }
     else{

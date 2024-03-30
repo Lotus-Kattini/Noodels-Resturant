@@ -10,19 +10,15 @@ function Navbar({setshowLogin}) {
     const [menu,setmenu]=useState('home')
     const [dropdown,setdropdown]=useState(false)
     const {getTotalCartAmount}=useContext(Context)
-    const logoutlocal=window.localStorage.getItem('logout')
-    const [logout,setlogout]=useState(false)
+    const [logout,setlogout]=useState()
 
     useEffect(()=>{
-        setlogout(logoutlocal)
-    },[logout,logoutlocal])
+        setlogout(()=>window.localStorage.getItem('forlogout'))
+    },[])
 
-    console.log(logoutlocal)
-    console.log(logout)
 
     function Logout(){
-        window.localStorage.setItem('logout',false)
-        setlogout(false)
+        window.localStorage.removeItem('forlogout')
         toast.success('You loged out successfully', {
             position: "top-right",
             autoClose: 5000,
@@ -33,6 +29,9 @@ function Navbar({setshowLogin}) {
             progress: undefined,
             theme: "light",
         });
+        setTimeout(()=>{
+            window.location.reload()
+        },3000)
     }
 
   return (
