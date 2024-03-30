@@ -113,7 +113,7 @@
   border: 1px solid #c5c5c5;
   outline-color: tomato;
   transition: 0.4s;
-  transform: translateY(-300%);
+  transform: translateY(-350%);
 }
 
 .dropdown-menu-search.workingSearch {
