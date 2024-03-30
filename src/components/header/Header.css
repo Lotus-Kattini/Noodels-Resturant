@@ -29,7 +29,7 @@
   font-size: 1vw;
 }
 
-.header-content button {
+.header-content a {
   border: none;
   color: #747474;
   font-weight: 500;
@@ -44,9 +44,18 @@
   .header-content h2 {
     font-size: 18px;
   }
-  .header-content button {
+  .header-content a {
     padding: 0.5vw 1.6vw;
     font-size: 15px;
     border-radius: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-content h2 {
+    font-size: 18px;
+  }
+  .header-content a {
+    display: none;
   }
 }
